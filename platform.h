@@ -23,16 +23,17 @@
 
 #ifndef __PLATFORM_H
 #define __PLATFORM_H
-
+#include <stdint.h>
 #ifdef WIN32
 #include <windows.h>
-#include <stdint.h>
 
  typedef HANDLE FileHandle;
 #ifdef _MSC_VER
  typedef unsigned char uint8_t;
  typedef unsigned short uint16_t;
  typedef unsigned int uint32_t;
+ #define __builtin_bswap64 _byteswap_uint64
+ #define __attribute__(x)
 #endif
  
  #define FILE_DELIM		"\\"

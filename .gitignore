@@ -1,1 +1,6 @@
 *.pro.user*
+.vs
+Debug
+Release
+*.log
+*.user

@@ -150,6 +150,10 @@ typedef struct tagBLOCK_GROUP
 
 */
 
+#ifdef _MSC_VER
+    #pragma pack(push,1)
+#endif
+
 /* The Super Block comes first in the block group */
 typedef struct tagEXT2_SUPER_BLOCK
 {
@@ -310,6 +314,9 @@ typedef struct ext4_extent_header {
     uint32_t  eh_generation;  /* generation of the tree */
 }__attribute__ ((__packed__)) EXT4_EXTENT_HEADER;
 
+#ifdef _MSC_VER
+#pragma pack(push,1)
+#endif
 
 #define EXT4_EXT_MAGIC          0xf30a
 #define get_ext4_header(i)      ((struct ext4_extent_header *) (i)->i_block)
